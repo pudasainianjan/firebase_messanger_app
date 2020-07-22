@@ -1,0 +1,128 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="http://cdn.date-fns.org/v1.9.0/date_fns.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/date-fns/1.30.1/date_fns.min.js"></script>
+    <title>Anjaan Chat Room</title>
+</head>
+<body>
+    <!-- container & title -->
+<div class="container my-4">
+    <h2 class="pt-2 my-4 text-center text-white">Firebase Realtime Musical Messanger App By Anjan😂</h1>
+    <p class="my-4 text-center text-white">Your Any Action here may play random drumset...  -Anjan  😂😂😂</p>
+
+    <!-- buttons for chatrooms -->
+    <div class="chat-rooms mb-3 text-center">
+        <div class="my-2 text-white">Choose a chatroom:</div>
+        <button class="btn" id="general">#general</button>
+        <button class="btn" id="gaming">#gaming</button>
+        <button class="btn" id="music">#music</button>
+        <button class="btn" id="programming">#programming</button>
+    </div>
+
+    <!-- chat list/window -->  <!--all messages-->
+    <div class="chat-window">
+        <ul class="chat-list list-group"><!--! we inject messanegs here dynamically --></ul>
+    </div>
+
+    <!-- new chat form(input) -->
+    <form class="new-chat my-3">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text">Your message:</div>
+          </div>
+    
+          <input type="text" id="message" class="form-control" required> 
+         
+          <div class="input-group-append">
+            <input type="submit" class="btn" id="send" value="send">
+          </div>
+        </div>
+    </form>
+
+    <!-- update name form -->
+    <form class="pb-3 new-name my-3">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text">Update name:</div>
+          </div>
+          <input type="text" id="name" class="form-control" required>
+          <div class="input-group-append">
+            <input type="submit" class="btn" value="update">
+          </div>
+        </div>
+        <div class="update-msg alert alert-success d-none"></div>
+    </form>
+
+
+</div>
+
+<!-- for playing sound -->
+<audio data-key="0" src="sounds/clap.wav"></audio>
+<audio data-key="1" src="sounds/hihat.wav"></audio>
+<audio data-key="2" src="sounds/kick.wav"></audio>
+<audio data-key="3" src="sounds/openhat.wav"></audio>
+<audio data-key="4" src="sounds/boom.wav"></audio>
+<audio data-key="5" src="sounds/ride.wav"></audio>
+<audio data-key="6" src="sounds/snare.wav"></audio>
+<audio data-key="7" src="sounds/tom.wav"></audio>
+<audio data-key="8" src="sounds/tink.wav"></audio>
+
+
+    
+
+    <!-- connecting to firebase -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-firestore.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-analytics.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyB9sbFdjcRIpoPGJ9ZEhR5WDlcDNQg9mQE",
+        authDomain: "myapp-35664.firebaseapp.com",
+        databaseURL: "https://myapp-35664.firebaseio.com",
+        projectId: "myapp-35664",
+        storageBucket: "myapp-35664.appspot.com",
+        messagingSenderId: "794358965160",
+        appId: "1:794358965160:web:835889ed0e3d085096f39d",
+        measurementId: "G-10FJPHXNY3"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+
+    //   // Get a reference to the database service
+    const db = firebase.firestore();
+
+    
+    </script>
+
+    <script src="scripts/chat.js"></script>
+    <script src="scripts/ui.js"></script>
+    <script src="scripts/app.js"></script>
+    
+</body>
+</html>
+
+
+
+
+
+  
+
+    
+   
+
+    
+    
+
+  
