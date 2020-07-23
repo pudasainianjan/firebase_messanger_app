@@ -87,7 +87,13 @@ const chatUI = new ChatUI(chatList);
 const chatroom = new Chatroom('general',username);
 //get the chat and render
 
-chatroom.getChats(data=>chatUI.render(data.data(),data.id))  //.then(()=>chatroom.playSound()); //data is single object...everytime we get change we fire callback get single object and render()
+chatroom.getChats(data=>chatUI.render(data.data(),data.id)).then(()=> setTimeout(() => {  //data is single object...everytime we get change we fire callback get single object and render()
+    window.scrollTo({
+        top: document.body.scrollHeight,
+        // left: 100,
+        behavior: 'smooth'
+      })
+}, 1000));
 
 
 
